@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KyrilosTech // الفيدباك</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
+<meta name="author" content="Kyrilos Ayman Adly">
+<meta name="theme-color" content="#01030a">
+<meta name="description" content="شارك رأيك وتقييمك لكورسات KyrilosTech Academy">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="KyrilosTech Academy">
+<meta property="og:title" content="KyrilosTech Academy">
+<meta property="og:description" content="شارك رأيك وتقييمك لكورسات KyrilosTech Academy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-grid"></div>
+<div class="glow glow-cyan"></div>
+<div class="glow glow-purple"></div>
+<div class="particles" id="particles"></div>
+<div class="scanlines"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◇</span>
+        <span>KYRILOS<span class="logo-accent">TECH</span></span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">الكورسات</a>
+        <a href="exam.html">الامتحان</a>
+        <a href="grades.html">النتائج</a>
+        <a href="feedback.html" class="active">الفيدباك</a>
+        <a href="login.html" data-login-link>تسجيل الدخول</a>
+    </div>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        النظام متاح
+    </div>
+</nav>
+
+<main>
+
+<section class="page-header">
+    <div class="system-label">
+        <span class="line"></span>
+        رأيك يهمنا
+        <span class="line"></span>
+    </div>
+    <h1>شاركنا <span class="accent">رأيك</span></h1>
+    <p>ساعدنا نطوّر الكورسات بتقييمك وتجربتك الشخصية.</p>
+</section>
+
+<div class="feedback-container">
+
+    <div class="feedback-form-card">
+        <div class="form-title">📝 اكتب فيدباك</div>
+        <p class="form-subtitle">كل رأي بيهمنا. قولنا تجربتك مع الكورس.</p>
+
+        <form id="feedbackForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">الاسم</label>
+                    <input type="text" id="name" placeholder="اسمك الكامل" maxlength="60" required>
+                </div>
+                <div class="form-group">
+                    <label for="course">الكورس</label>
+                    <select id="course" required>
+                        <option value="">اختر الكورس</option>
+                        <option value="HTML & CSS">HTML & CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:18px;">
+                <label>التقييم</label>
+                <div class="rating-stars">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">التعليق</label>
+                <textarea id="comment" placeholder="اكتب رأيك بصراحة..." maxlength="1000" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-feedback-btn">🚀 إرسال الفيدباك</button>
+        </form>
+    </div>
+
+    <div class="feedback-list-header">
+        <h3>💬 آراء الطلاب</h3>
+        <span class="feedback-count" id="feedbackCount">0 فيدباك</span>
+    </div>
+
+    <div class="feedback-list" id="feedbackList"></div>
+
+    <div class="founder-review">
+        <div class="founder-review-header">
+            <span class="founder-review-badge">⭐ رأي المؤسس</span>
+        </div>
+        <div class="feedback-item founder-feedback-item">
+            <div class="feedback-header">
+                <div class="feedback-avatar" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">K</div>
+                <div class="feedback-user">
+                    <div class="feedback-name">Kyrilos Ayman Adly</div>
+                    <div class="feedback-course">📚 مؤسس KyrilosTech Academy</div>
+                </div>
+                <div class="feedback-rating">
+                    <span class="star">★</span><span class="star">★</span>
+                    <span class="star">★</span><span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+            <div class="feedback-comment">
+                الكورس ممتاز بصراحة، والشرح واضح ومنظم خطوة بخطوة.
+                المحتوى بيغطي كل الأساسيات اللي محتاجها أي مطوّر واجهات أمامية،
+                والأمثلة العملية بتثبّت المعلومة بشكل كبير.
+                <br><br>
+                بس كان هيبقى أفضل لو فيه <strong>اختبارات قصيرة بعد كل قسم</strong>
+                (Quiz صغير 3-5 أسئلة) عشان الطالب يعرف مستواه ويقيس فهمه.
+                <br><br>
+                بشكل عام: <strong>كورس يستحق التقدير</strong> 💎
+            </div>
+            <div class="feedback-date">منشور بواسطة المؤسس</div>
+        </div>
+    </div>
+
+</div>
+
+</main>
+
+<footer>
+    <span>KYRILOS AYMAN ADLY // النظام الأساسي</span>
+    <span>الإصدار 1.0.26</span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script type="module" src="firebase-service.js"></script>
+</body>
+</html>

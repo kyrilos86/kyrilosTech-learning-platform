@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KyrilosTech // الشهادة</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
+<meta name="author" content="Kyrilos Ayman Adly">
+<meta name="theme-color" content="#01030a">
+<meta name="description" content="شهادة إتمام الكورس من KyrilosTech Academy">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="KyrilosTech Academy">
+<meta property="og:title" content="KyrilosTech Academy">
+<meta property="og:description" content="شهادة إتمام الكورس من KyrilosTech Academy">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.cert-wrap { max-width: 900px; margin: 0 auto; padding: 30px 20px 80px; position: relative; z-index: 5; }
+.cert {
+    padding: 50px 40px; text-align: center;
+    background: linear-gradient(145deg, rgba(7,18,38,0.95), rgba(1,5,15,0.9));
+    border: 2px solid rgba(0,246,255,0.45);
+    border-radius: 24px;
+    box-shadow: 0 0 60px rgba(0,246,255,0.15);
+    outline: 1px dashed rgba(139,92,246,0.5); outline-offset: -14px;
+}
+.cert-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; letter-spacing: 3px; color: var(--cyan); margin-bottom: 25px; }
+.cert h1 { font-size: clamp(26px, 5vw, 42px); font-weight: 900; margin-bottom: 25px; }
+.cert .small { color: var(--text-mute); font-size: 14px; margin-bottom: 10px; }
+.cert .student { font-size: clamp(26px, 5vw, 40px); font-weight: 900; color: #fbbf24; margin: 10px 0 25px; text-shadow: 0 0 25px rgba(251,191,36,0.4); }
+.cert .course { font-size: clamp(20px, 4vw, 30px); font-weight: 800; color: var(--cyan); margin: 10px 0 20px; }
+.cert .meta { color: var(--text-dim); font-size: 14px; line-height: 2; margin-bottom: 30px; }
+.cert .sign { margin-top: 30px; font-family: 'Orbitron', sans-serif; font-size: 13px; color: var(--text-dim); }
+.cert-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+@media print {
+    body { background: #fff !important; color: #000 !important; }
+    .navbar, footer, .background-grid, .glow, .particles, .scanlines, .cert-actions,
+    .back-to-top, .scroll-progress, .mobile-menu, .hamburger-btn { display: none !important; }
+    .cert { background: #fff; border: 3px solid #0891b2; box-shadow: none; outline-color: #8b5cf6; }
+    .cert h1, .cert .meta, .cert .small, .cert .sign { color: #111 !important; }
+    .cert .course, .cert .cert-logo { color: #0891b2 !important; }
+    .cert .student { color: #b45309 !important; text-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="background-grid"></div>
+<div class="glow glow-cyan"></div>
+<div class="glow glow-purple"></div>
+<div class="particles" id="particles"></div>
+<div class="scanlines"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◇</span>
+        <span>KYRILOS<span class="logo-accent">TECH</span></span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">الكورسات</a>
+        <a href="exam.html">الامتحان</a>
+        <a href="grades.html" class="active">النتائج</a>
+        <a href="feedback.html">الفيدباك</a>
+        <a href="login.html" data-login-link>تسجيل الدخول</a>
+    </div>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        النظام متاح
+    </div>
+</nav>
+
+<main>
+<div class="cert-wrap" id="certWrap"></div>
+</main>
+
+<footer>
+    <span>KYRILOS AYMAN ADLY // النظام الأساسي</span>
+    <span>الإصدار 1.0.26</span>
+</footer>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script type="module" src="firebase-service.js"></script>
+<script>
+(function () {
+    var wrap = document.getElementById('certWrap');
+    function esc(s) { return window.KT ? KT.escapeHtml(s) : String(s); }
+    function unavailable() {
+        wrap.innerHTML = '<div class="empty-state"><div class="empty-icon">🎓</div>' +
+            '<div class="empty-title">الشهادة غير متاحة</div>' +
+            '<p class="empty-text">الشهادة بتظهر بعد اجتياز الامتحان (60% أو أكثر) وأنت مسجّل دخول بنفس الحساب.</p>' +
+            '<a href="grades.html" class="exam-btn">العودة للنتائج</a></div>';
+    }
+    var id = new URLSearchParams(location.search).get('d');
+    KT.ready.then(function (user) {
+        if (!user || !id) return unavailable();
+        return KT.getStore().getResult(id).then(function (r) {
+            if (!r || !r.passed) return unavailable();
+            var dateStr = new Date(r.date).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+            wrap.innerHTML =
+                '<div class="cert">' +
+                '<div class="cert-logo">◇ KYRILOSTECH ACADEMY</div>' +
+                '<h1>شهادة إتمام كورس</h1>' +
+                '<div class="small">تشهد KyrilosTech Academy بأن</div>' +
+                '<div class="student">' + esc(user.name) + '</div>' +
+                '<div class="small">قد اجتاز بنجاح امتحان كورس</div>' +
+                '<div class="course">' + esc(r.courseName) + '</div>' +
+                '<div class="meta">بنتيجة ' + Number(r.percentage) + '% (' + Number(r.correct) + ' من ' + Number(r.total) + ')<br>بتاريخ ' + dateStr + '</div>' +
+                '<div class="sign">KYRILOS AYMAN ADLY — Founder</div>' +
+                '</div>' +
+                '<div class="cert-actions">' +
+                '<button class="exam-btn" type="button" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>' +
+                '<a class="exam-btn secondary" href="grades.html">العودة للنتائج</a></div>';
+        });
+    }).catch(unavailable);
+})();
+</script>
+</body>
+</html>

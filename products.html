@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KyrilosTech // الكورسات</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
+<meta name="description" content="كورسات Front-End احترافية من KyrilosTech Academy">
+<meta name="author" content="Kyrilos Ayman Adly">
+<meta name="theme-color" content="#01030a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="KyrilosTech Academy">
+<meta property="og:title" content="KyrilosTech Academy">
+<meta property="og:description" content="كورسات Front-End احترافية من KyrilosTech Academy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-grid"></div>
+<div class="glow glow-cyan"></div>
+<div class="glow glow-purple"></div>
+<div class="particles" id="particles"></div>
+<div class="scanlines"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◇</span>
+        <span>KYRILOS<span class="logo-accent">TECH</span></span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html" class="active">الكورسات</a>
+        <a href="exam.html">الامتحان</a>
+        <a href="grades.html">النتائج</a>
+        <a href="feedback.html">الفيدباك</a>
+        <a href="login.html" data-login-link>تسجيل الدخول</a>
+    </div>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        النظام متاح
+    </div>
+</nav>
+
+<main>
+
+<section class="page-header">
+    <div class="system-label">
+        <span class="line"></span>
+        مسارات تعليمية احترافية
+        <span class="line"></span>
+    </div>
+    <h1>كورسات تطوير <span class="accent">الواجهات الأمامية</span></h1>
+    <p>برامج تدريبية مصممة بعناية لتمنحك المهارات العملية التي يحتاجها سوق العمل.</p>
+</section>
+
+<div class="search-wrapper">
+    <input type="text" id="courseSearch" placeholder="🔍 ابحث عن كورس...">
+</div>
+
+<div class="filters">
+    <button class="filter-btn active" data-filter="all" type="button">جميع الكورسات</button>
+    <button class="filter-btn" data-filter="htmlcss" type="button">HTML & CSS</button>
+    <button class="filter-btn" data-filter="javascript" type="button">JavaScript</button>
+</div>
+
+<section class="products-grid">
+
+    <div class="product-card" data-category="htmlcss">
+        <div class="product-image">
+            <span class="product-badge">الأكثر طلباً</span>
+            <img 
+                src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=500&fit=crop" 
+                alt="HTML & CSS Course" 
+                class="product-img"
+                loading="lazy">
+        </div>
+        <div class="product-info">
+            <div class="product-category">FRONT-END</div>
+            <h3>احترف بناء واجهات الويب باستخدام HTML & CSS</h3>
+            <p>
+                برنامج تدريبي شامل يؤهلك لبناء صفحات ويب احترافية
+                وفق أحدث المعايير العالمية. يغطي الكورس أساسيات
+                HTML5 وهيكلة المستندات، إضافة إلى التنسيقات المتقدمة
+                بـ CSS3، وأنظمة Flexbox و Grid.
+            </p>
+            <div class="product-footer">
+                <span class="price">500 ج.م</span>
+                <a href="course-details.html?course=htmlcss" class="add-btn">›</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="javascript">
+        <div class="product-image">
+            <span class="product-badge">الأكثر مبيعاً</span>
+            <img 
+                src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=500&h=500&fit=crop" 
+                alt="JavaScript Course" 
+                class="product-img"
+                loading="lazy">
+        </div>
+        <div class="product-info">
+            <div class="product-category">FRONT-END</div>
+            <h3>احترف لغة JavaScript وبناء التطبيقات التفاعلية</h3>
+            <p>
+                برنامج تدريبي متقدم يهدف إلى إتقان لغة JavaScript
+                من الأساسيات وحتى الاحتراف. يشمل المتغيرات والدوال
+                والتحكم في عناصر DOM ومعالجة الأحداث، مع تغطية شاملة
+                لـ ES6+ وتقنيات Async/Await.
+            </p>
+            <div class="product-footer">
+                <span class="price">500 ج.م</span>
+                <a href="course-details.html?course=javascript" class="add-btn">›</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <span>KYRILOS AYMAN ADLY // النظام الأساسي</span>
+    <span>الإصدار 1.0.26</span>
+</footer>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script type="module" src="firebase-service.js"></script>
+</body>
+</html>

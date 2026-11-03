@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KyrilosTech // الامتحان</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
+<meta name="author" content="Kyrilos Ayman Adly">
+<meta name="theme-color" content="#01030a">
+<meta name="description" content="امتحانات تفاعلية لكورسات HTML & CSS و JavaScript">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="KyrilosTech Academy">
+<meta property="og:title" content="KyrilosTech Academy">
+<meta property="og:description" content="امتحانات تفاعلية لكورسات HTML & CSS و JavaScript">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-grid"></div>
+<div class="glow glow-cyan"></div>
+<div class="glow glow-purple"></div>
+<div class="particles" id="particles"></div>
+<div class="scanlines"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◇</span>
+        <span>KYRILOS<span class="logo-accent">TECH</span></span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">الكورسات</a>
+        <a href="exam.html" class="active">الامتحان</a>
+        <a href="grades.html">النتائج</a>
+        <a href="feedback.html">الفيدباك</a>
+        <a href="login.html" data-login-link>تسجيل الدخول</a>
+    </div>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        النظام متاح
+    </div>
+</nav>
+
+<main>
+
+<section class="page-header">
+    <div class="system-label">
+        <span class="line"></span>
+        اختبر معلوماتك
+        <span class="line"></span>
+    </div>
+    <h1>امتحان <span class="accent">الكورسات</span></h1>
+    <p>اختر الكورس وابدأ الامتحان. النتيجة هتتسجل في صفحة النتائج تلقائياً.</p>
+</section>
+
+<div class="exam-container">
+
+    <div class="course-selector" id="courseSelector">
+        <button class="course-select-btn active" data-course="htmlcss" type="button">HTML & CSS</button>
+        <button class="course-select-btn" data-course="javascript" type="button">JavaScript</button>
+    </div>
+
+    <div class="exam-header" id="examHeader" style="display: none;">
+        <div>
+            <div class="exam-title" id="examTitle">امتحان HTML & CSS</div>
+            <div class="exam-progress-text" id="progressText">تم الإجابة على 0 من 10</div>
+        </div>
+        <div class="exam-timer" id="timer">10:00</div>
+    </div>
+
+    <div id="questionsContainer"></div>
+
+    <div class="exam-actions" id="examActions" style="display: none;">
+        <button class="exam-btn" id="submitBtn" type="button">تسليم الامتحان</button>
+        <button class="exam-btn secondary" id="resetBtn" type="button">إعادة</button>
+    </div>
+
+    <div id="resultContainer"></div>
+
+</div>
+
+</main>
+
+<footer>
+    <span>KYRILOS AYMAN ADLY // النظام الأساسي</span>
+    <span>الإصدار 1.0.26</span>
+</footer>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script type="module" src="firebase-service.js"></script>
+</body>
+</html>
